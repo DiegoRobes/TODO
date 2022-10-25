@@ -1,0 +1,85 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="static/css/styles.css">
+{% endblock %}
+
+{% block title %}TODO{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+      <h1 class="display-4">TODO</h1>
+      <p class="lead">This Week's tasks</p>
+      <hr class="my-4">
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <h1 style="margin-left: 1.5rem;">Task Log</h1>
+	  <table class="table">
+          <tr>
+              {%for i in days: %}
+              <td>
+                  <table>
+                      <tr>
+                          <th>
+                              {{ days[i] }}
+                              <hr class="zero">
+                          </th>
+                      </tr>
+                      {%for x in tasks: %}
+                      {%if x.owner_id == i: %}
+                      <tr>
+                        <td>
+                            <button  class="click" onclick="change_text('{{ x.task_description }}')">{{ x.task_name }}</button>
+                            <hr class="zero">
+                        </td>
+                      </tr>
+                      {%endif%}
+                      {%endfor%}
+                  </table>
+              </td>
+              {%endfor%}
+
+          </tr>
+          <tr>
+              <td style="border: 0;">
+                  <h4><a href="{{url_for('add')}}">+add new task</a></h4>
+              </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3  style="margin-left: 1.5rem;">Task Description</h3>
+            <table class="table">
+                <tr>
+                    <td>
+                        <p class="card-txt" id="demo">
+                            Click any Task, and the description will show right here.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+   function change_text (text) {
+      document.getElementById("demo").innerHTML = text;
+   }
+</script>
+
+
+{% endblock %}

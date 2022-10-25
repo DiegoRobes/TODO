@@ -1,0 +1,69 @@
+/* This CSS file will need to be added to the styling of 
+your web pages for the styles to be rendered. */
+
+.jumbotron{
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: white;
+  background-color: #333;
+  padding: 0;
+}
+
+.add{
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: #333;
+  background-color: #eee;
+  padding: 0;
+}
+
+
+.my-4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #333;
+}
+
+.elements{
+    padding-left: 15px;
+}
+
+.zero{
+    border: 0;
+    border-top: 1.5px solid #eee;
+    margin: 5px 0px 5px 0px;
+}
+
+
+.task-label{
+    width: 25%;
+    margin-top: 20px;
+}
+
+.task-name{
+    width: 25%;
+    margin: 0px 5px 40px 10px;
+}
+
+
+.task-description{
+    width: 50%;
+    margin: 0px 5px 30px 10px;
+}
+
+
+.click{
+    background: white;
+    border:none;
+    border-radius: 2px;
+    padding: 0 5px;
+}
+
+.click:hover {
+      background-color:#333;
+      color: white;
+      transition: 0.7s;
+  }
